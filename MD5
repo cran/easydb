@@ -1,13 +1,13 @@
-181dcef53495d7bd234e3da9a3a7d7fa *DESCRIPTION
+a9725be85aa2e03e762dc891cd12b94d *DESCRIPTION
 73a5487b0e9589e373c37a17c51763ba *LICENSE
 25e799be4763f1a0adb836ac65f55f5e *NAMESPACE
-b87e0082aebcdf6b2f9bab44f9b0e13f *R/easyDB.R
-636c0dc89f014e628ebdbcc6854cea07 *README.md
-a1d8a6c3d0d7af4255d560bbf69b7c8c *build/vignette.rds
-e8c98e39c7a9fcb4b53cb90eb37e61cc *inst/doc/adding_db_support.R
-2d318081497d54265617bce6f1e6f52d *inst/doc/adding_db_support.Rmd
-cdd998134ff18378b1f3bde3adab4a29 *inst/doc/adding_db_support.html
-07df35e8f30aaaf56557fde549894be9 *inst/images/easydb.pptx
+358ebefb16a15c6f43f5f648584a41c4 *NEWS.md
+e7307cb6dfbe74162a392e5fd5662733 *R/easyDB.R
+ebff4938e8b29075c8ebccf0fc75da29 *README.md
+4e1e1dfd4d2e08a46fdf92442969466e *build/vignette.rds
+3c9e2d06e8560272e30c98b0c827478b *inst/doc/adding_db_support.R
+eb655eb1b56508ae9cb37e6820faf652 *inst/doc/adding_db_support.Rmd
+86133c8e77942ed0eecaec16eefdb715 *inst/doc/adding_db_support.html
 3bd3118d0eadb28c6e2912b0df1d691a *inst/images/easydb_hex.png
 ca382f291c248bdc17b96efaf70301f8 *inst/images/easydb_hex.svg
 de23eacb45c8a8611048ec9f62173586 *inst/testdbs/mtcars.sqlite
@@ -25,4 +25,4 @@ ce8d953e08c167fcf3e156ed439d543c *man/utils_database_read_yaml.Rd
 37bda74f2dd77c75f5d63007945eb91f *man/utils_database_remove_entry_from_yaml.Rd
 cc73ca957726de2e0833cde5ad54e666 *man/utils_database_write_yaml.Rd
 8101d8ee09796173a09258bd2c43f386 *man/utils_user_input_retrieve_free_text.Rd
-2d318081497d54265617bce6f1e6f52d *vignettes/adding_db_support.Rmd
+eb655eb1b56508ae9cb37e6820faf652 *vignettes/adding_db_support.Rmd

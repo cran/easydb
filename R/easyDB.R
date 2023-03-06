@@ -92,7 +92,7 @@ easydb_connect <- function(dbname, config_file, from_scratch = FALSE) {
   }
 
   # Get/Set Config
-  cli::cli_h1("Database Configuration")
+  cli::cli_h2("Database Configuration")
 
   # Delete database entry if running from scratch
   if(from_scratch & utils_database_already_in_yaml(dbname, file = config_file))
@@ -112,7 +112,7 @@ easydb_connect <- function(dbname, config_file, from_scratch = FALSE) {
 
 
   # Get / Set Credentials
-  cli::cli_h1("Credentials")
+  cli::cli_h2("Credentials")
 
   # Override creds_required variable for sqlite databses
   if (config$creds_required){
@@ -214,10 +214,10 @@ easydb_available_databases <- function(config_file){
     databases_described <- 'No database connections defined'
     }
 
-  cli::cli_h1('Databases:')
+  cli::cli_h2('Databases:')
   cli::cli_bullets(databases_described)
 
-  cli::cli_h1('Notes')
+  cli::cli_h2('Notes')
   cli::cli_alert_info('Config file: {.path {config_file}}')
   cli::cli_alert_info(
     "Add more database connections using `easydb_connect(<dbname>, {.field \'{config_file}\'})`")
@@ -446,9 +446,20 @@ utils_database_get_driver_specific_config_properties <- function(file, dbname, d
     ssl_required <- utils::menu(title="Do you need to point to SSL certificates?", choices = c("Yes", "No"))
 
     if (ssl_required == 1) {
-      ssl_cert <- utils_file_choose_looped("Please select your SSL Certificate (*.pem).")
-      ssl_key <- utils_file_choose_looped("Please select your Private SSL Key (*.pem).")
-      ssl_ca <-  utils_file_choose_looped("Please select your CA certificate (*.pem).")
+      ssl_ca <-  utils_file_choose_looped("Please select your Certificate Authority (CA) certificate file (*.pem).")
+
+      # Add options to supply optional ssl files
+      requires_ssl_cert <- utils::menu(choices = c("Yes", "No"), title = "Would you like to supply an OPTIONAL server public key certificate file")
+      if(requires_ssl_cert == 1)
+        ssl_cert <- utils_file_choose_looped("Please select your SSL Certificate (*.pem).")
+      else
+        ssl_cert <- NULL
+      requires_ssl_ca <- utils::menu(choices = c("Yes", "No"), title = "Would you like to supply an OPTIONAL server private key file.")
+      if(requires_ssl_ca == 1)
+        ssl_key <- utils_file_choose_looped("Please select your Private SSL Key (*.pem).")
+      else
+        ssl_key <- NULL
+
     } else {
       ssl_cert <- NULL
       ssl_key <- NULL
